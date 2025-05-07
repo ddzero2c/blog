@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import Analytics from './analytics'
 
 // Import the Search component dynamically to avoid server-side rendering issues
 const Search = dynamic(() => import('./search'), { ssr: false })
@@ -34,7 +35,12 @@ export default function Layout({ children, home, title, description, ogImage }) 
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
           rel="stylesheet" 
         />
+        {/* Make site searchable */}
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
       </Head>
+      
+      <Analytics />
 
       <div className="container">
         <div className="sidebar">
