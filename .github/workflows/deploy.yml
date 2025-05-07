@@ -35,6 +35,7 @@ jobs:
         run: |
           npm run build
           touch out/.nojekyll
+          echo "blog.ddzero2c.dev" > out/CNAME
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

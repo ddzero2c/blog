@@ -7,9 +7,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Adjust based on your GitHub username and repository name
-  // e.g. if your repo is github.com/ddzero2c/blog
-  basePath: process.env.NODE_ENV === 'production' ? '/blog' : '',
+  // When using a custom domain, we don't need basePath
+  basePath: '',
 }
 
 module.exports = nextConfig
