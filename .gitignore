@@ -40,3 +40,4 @@ next-env.d.ts
 *.sw?
 *.swp
 .DS_Store
+**/.claude/settings.local.json

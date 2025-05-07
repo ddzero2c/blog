@@ -6,11 +6,12 @@ import dynamic from 'next/dynamic'
 const Search = dynamic(() => import('./search'), { ssr: false })
 
 export default function Layout({ children, home, title, description, ogImage }) {
-  const siteTitle = "Ryder's blog"
+  const isAboutPage = title === "About";
+  const siteTitle = "Ryder"
   const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle
   
   return (
-    <div className="container">
+    <>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={description || "$ dd if=/dev/brain of=/dev/blog"} />
@@ -20,35 +21,60 @@ export default function Layout({ children, home, title, description, ogImage }) 
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="UTF-8" />
+        <link 
+          rel="preconnect" 
+          href="https://fonts.googleapis.com" 
+        />
+        <link 
+          rel="preconnect" 
+          href="https://fonts.gstatic.com" 
+          crossOrigin="true" 
+        />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+          rel="stylesheet" 
+        />
       </Head>
 
-      <header className="header">
-        <h1>
-          <Link href="/">
-            {siteTitle}
+      <div className="container">
+        <div className="sidebar">
+          <Link href="/" className="logo">
+            <div className="monogram">RW</div>
           </Link>
-        </h1>
-        <p className="site-description">$ dd if=/dev/brain of=/dev/blog</p>
-        <nav>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Search />
-        </nav>
-      </header>
-
-      <main>{children}</main>
-      
-      {!home && (
-        <div className="back-link">
-          <Link href="/">
-            ← Back to home
-          </Link>
+          
+          <nav className="main-nav">
+            <Link href="/about" className={`nav-link ${isAboutPage ? 'active' : ''}`}>
+              About
+            </Link>
+            <Link href="/" className={`nav-link ${home && !isAboutPage ? 'active' : ''}`}>
+              Posts
+            </Link>
+            <div className="search-wrapper">
+              <Search />
+            </div>
+          </nav>
         </div>
-      )}
 
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} - Built with Next.js | <a href="https://github.com/ddzero2c" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-      </footer>
-    </div>
+        <main className="main-content">
+          <div className="site-name">$ dd if=/dev/brain of=/dev/blog</div>
+          
+          {title && (
+            <div className="site-header">
+              <h1 className="site-title">{siteTitle}</h1>
+            </div>
+          )}
+          
+          {children}
+          
+          {!home && (
+            <div className="back-link">
+              <Link href="/">
+                ← Back to all posts
+              </Link>
+            </div>
+          )}
+        </main>
+      </div>
+    </>
   )
 }

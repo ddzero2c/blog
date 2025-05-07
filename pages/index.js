@@ -7,17 +7,26 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <section>
         <ul className="post-list">
-          {allPostsData.map(({ slug, date, title, excerpt }) => (
+          {allPostsData.map(({ slug, date, title }) => (
             <li className="post-item" key={slug}>
-              <h3 className="post-title">
-                <Link href={`/posts/${slug}`}>
-                  {title}
-                </Link>
-              </h3>
-              <div className="post-meta">
-                <time dateTime={date}>{new Date(date).toLocaleDateString('zh-TW')}</time>
+              <div className="post-title-wrapper">
+                <h2 className="post-title">
+                  <Link href={`/posts/${slug}`}>
+                    {title}
+                  </Link>
+                </h2>
               </div>
-              {excerpt && <p>{excerpt}</p>}
+              <div className="post-meta">
+                {date && (
+                  <time dateTime={date}>
+                    {new Intl.DateTimeFormat('en-US', {
+                      year: 'numeric',
+                      month: 'long', 
+                      day: 'numeric'
+                    }).format(new Date(date))}
+                  </time>
+                )}
+              </div>
             </li>
           ))}
         </ul>

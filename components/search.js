@@ -127,7 +127,7 @@ export default function Search() {
               <li key={post.slug} onClick={() => handleSelectResult(post.slug)}>
                 <span className="search-result-title">{post.title}</span>
                 <span className="search-result-date">
-                  {new Date(post.date).toLocaleDateString('zh-TW')}
+                  {post.date ? new Date(post.date).toLocaleDateString('zh-TW') : ''}
                 </span>
               </li>
             ))}
