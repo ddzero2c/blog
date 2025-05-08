@@ -9,6 +9,14 @@ const nextConfig = {
   },
   // When using a custom domain, we don't need basePath
   basePath: '',
+  
+  // Tell Next.js to treat sitemap.xml content as XML
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/generate-sitemap');
+    }
+    return config;
+  },
 }
 
 module.exports = nextConfig
