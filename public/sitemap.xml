@@ -3,19 +3,37 @@
   <!-- Add the home page -->
   <url>
     <loc>https://blog.ddzero2c.dev</loc>
-    <lastmod>2025-05-08T14:27:53.640Z</lastmod>
+    <lastmod>2025-05-08T15:49:00.818Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Add the about page -->
   <url>
     <loc>https://blog.ddzero2c.dev/about</loc>
-    <lastmod>2025-05-08T14:27:53.640Z</lastmod>
+    <lastmod>2025-05-08T15:49:00.818Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Add all blog posts -->
   
+  <url>
+    <loc>https://blog.ddzero2c.dev/posts/what-is-dao</loc>
+    <lastmod>2025-01-21T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blog.ddzero2c.dev/posts/what-is-defi</loc>
+    <lastmod>2025-01-18T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blog.ddzero2c.dev/posts/what-is-nft</loc>
+    <lastmod>2025-01-15T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://blog.ddzero2c.dev/posts/what-is-smart-contract</loc>
     <lastmod>2025-01-12T00:00:00.000Z</lastmod>
