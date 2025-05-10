@@ -3,14 +3,14 @@
   <!-- Add the home page -->
   <url>
     <loc>https://blog.ddzero2c.dev</loc>
-    <lastmod>2025-05-08T16:33:10.420Z</lastmod>
+    <lastmod>2025-05-10T07:26:53.327Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Add the about page -->
   <url>
     <loc>https://blog.ddzero2c.dev/about</loc>
-    <lastmod>2025-05-08T16:33:10.420Z</lastmod>
+    <lastmod>2025-05-10T07:26:53.327Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

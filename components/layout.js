@@ -20,6 +20,7 @@ export default function Layout({ children, home, title, description, ogImage }) 
         <meta property="og:description" content={description || "$ dd if=/dev/brain of=/dev/blog"} />
         {ogImage && <meta property="og:image" content={ogImage} />}
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href={`https://blog.ddzero2c.dev${home ? '' : typeof window !== 'undefined' ? window.location.pathname : ''}`} />
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="UTF-8" />
         <link 
